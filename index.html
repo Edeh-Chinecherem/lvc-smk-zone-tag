@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SU Camp Tag</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+
+  <div class="tag-card">
+    <div class="logo">
+      <img src="images/su-logo.png" alt="SU Logo">
+    </div>
+    <h2>Scripture Union SMK Zone</h2>
+    <h3>Long Vacation Camp 2025</h3>
+
+    <div class="info">
+      <div><span class="label">Name:</span> <span id="name">Adaeze Okoro</span></div>
+      <div><span class="label">Category:</span> <span id="category">Teenagers</span></div>
+      <div><span class="label">Group:</span><span id="group">Ketu Group</span></div>
+      <div><span class="label">Community:</span> <span id="community">Enugu Central</span></div>
+      <div><span class="label">Reg No:</span> <span id="regNo">SU/25/EN123</span></div>
+    </div>
+
+    <div class="sport-house" id="sportHouse">Sport House: Blue</div>
+  </div>
+
+  <button class="no-print print-btn" onclick="window.print()">Print Tag</button>
+
+  <script>
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    
+    document.getElementById('name').textContent = urlParams.get('name') || 'Adaeze Okoro';
+    document.getElementById('category').textContent = urlParams.get('category') || 'Teenagers';
+    document.getElementById('group').textContent = urlParams.get('group') || 'Ketu Group';
+    document.getElementById('community').textContent = urlParams.get('community') || 'Enugu Central';
+    document.getElementById('regNo').textContent = urlParams.get('regNo') || 'SU/25/EN123';
+    
+    
+    const sportHouse = urlParams.get('sportHouse') || 'Blue';
+    const houseElement = document.getElementById('sportHouse');
+    houseElement.textContent = `Sport House: ${sportHouse}`;
+    houseElement.className = 'sport-house ' + sportHouse.toLowerCase();
+  </script>
+</body>
+</html>
